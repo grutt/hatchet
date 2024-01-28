@@ -4,6 +4,7 @@ import * as z from 'zod';
 export const CreateStepSchema = z.object({
   name: z.string(),
   parents: z.array(z.string()).optional(),
+  timeout: z.string().optional(),
 });
 
 export type NextStep = { [key: string]: string };
