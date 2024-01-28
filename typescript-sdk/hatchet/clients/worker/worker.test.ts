@@ -7,7 +7,6 @@ import { never } from 'zod';
 import sleep from '@util/sleep';
 import { ChannelCredentials } from 'nice-grpc';
 import { Worker } from './worker';
-import { Context } from '@hatchet/step';
 
 type AssignActionMock = AssignedAction | Error;
 

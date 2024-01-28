@@ -45,7 +45,6 @@ describe('ActionListener', () => {
     dispatcher = new DispatcherClient(
       {
         token: 'TOKEN',
-
         host_port: 'HOST_PORT',
         log_level: 'OFF',
         tls_config: {

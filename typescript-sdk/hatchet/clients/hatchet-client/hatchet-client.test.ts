@@ -46,6 +46,7 @@ describe('Client', () => {
       () =>
         new HatchetClient({
           host_port: 'HOST_PORT',
+          log_level: 'OFF',
           tls_config: {
             tls_strategy: 'tls',
             cert_file: 'TLS_CERT_FILE',
@@ -61,6 +62,7 @@ describe('Client', () => {
   it('should favor config param over yaml over env vars ', () => {
     const hatchet = new HatchetClient(
       {
+        log_level: 'OFF',
         tls_config: {
           cert_file: 'TLS_CERT_FILE',
           key_file: 'TLS_KEY_FILE',
@@ -77,7 +79,7 @@ describe('Client', () => {
     expect(hatchet.config).toEqual({
       token: 'TOKEN_YAML',
       host_port: 'HOST_PORT_YAML',
-      log_level: 'INFO',
+      log_level: 'OFF',
       tls_config: {
         tls_strategy: 'tls',
         cert_file: 'TLS_CERT_FILE',
@@ -95,6 +97,7 @@ describe('Client', () => {
         1234,
         {
           token: 'TOKEN',
+          log_level: 'OFF',
           tls_config: {
             tls_strategy: 'tls',
             cert_file: 'TLS_CERT_FILE',
@@ -110,7 +113,7 @@ describe('Client', () => {
       expect(hatchet.config).toEqual({
         token: 'TOKEN',
         host_port: 'HOST:1234',
-        log_level: 'INFO',
+        log_level: 'OFF',
         tls_config: {
           tls_strategy: 'tls',
           cert_file: 'TLS_CERT_FILE',
